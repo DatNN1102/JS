@@ -5,4 +5,3 @@ let newCourses = courses.map(function(course){
 })
 
 console.log(newCourses)
-console.log(newCourses)
