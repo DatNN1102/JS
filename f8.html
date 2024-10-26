@@ -61,40 +61,13 @@
                 <h1>turkish</h1>
                 <h3>kebab</h3>
             </div>
-            <div>
-                <div class="banner-img">
-                    <img src="images/banner/1.png" alt="">
-                    <div class="discount">
-                        <div>
-                            <p>20%</p>
-                            <span>off</span>
-                        </div>
+            <div class="banner-img">
+                <img src="images/banner/1.png" alt="">
+                <div class="discount">
+                    <div>
+                        <p>20%</p>
+                        <span>off</span>
                     </div>
-                </div>
-                <div class="banner-img">
-                    <img src="images/banner/1.png" alt="">
-                    <div class="discount">
-                        <div>
-                            <p>25%</p>
-                            <span>off</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="banner-img">
-                    <img src="images/banner/1.png" alt="">
-                    <div class="discount">
-                        <div>
-                            <p>30%</p>
-                            <span>off</span>
-                        </div>
-                    </div>
-                </div>
-                <a class="prev" onclick="nextSlide(-1)">❮</a>
-                <a class="next" onclick="nextSlide(1)">❯</a>
-                <div class="slideMenu">
-                    <span class="dot" onclick="jumpSlide(1)"></span>
-                    <span class="dot" onclick="jumpSlide(2)"></span>
-                    <span class="dot" onclick="jumpSlide(3)"></span>
                 </div>
             </div>
         </div>
@@ -323,51 +296,6 @@
         function topFunction() {
           document.body.scrollTop = 0;
           document.documentElement.scrollTop = 0;
-        }
-        let slideIndex = 1
-        autoShowSlides(slideIndex)
-        function nextSlide(n){
-            showSlides(slideIndex += n)
-        }
-        function jumpSlide(n){
-            showSlides(slideIndex = n)
-        }
-        function showSlides(n){
-            let slides = document.getElementsByClassName("banner-img")
-            let sildeMenu = document.getElementsByClassName("dot")
-            let slideLength = slides.length
-            if (n > slideLength) {
-                slideIndex = 1
-            }
-            if (n < 1) {
-                slideIndex = slideLength
-            }
-            for (let i = 0; i < slideLength; i++) {
-                slides[i].style.display = "none"
-            }
-            for (let i = 0; i < slideLength; i++) {
-                sildeMenu[i].className = sildeMenu[i].className.replace(" active", "")
-            }
-            slides[slideIndex - 1].style.display = "block"
-            sildeMenu[slideIndex - 1].className += " active"
-        }
-        function autoShowSlides(){
-            let slides = document.getElementsByClassName("banner-img")
-            let sildeMenu = document.getElementsByClassName("dot")
-            let slideLength = slides.length
-            slideIndex++
-            if (slideIndex > slideLength) {
-                slideIndex = 1
-            }
-            for (let i = 0; i < slideLength; i++) {
-                slides[i].style.display = "none"
-            }
-            for (let i = 0; i < slideLength; i++) {
-                sildeMenu[i].className = sildeMenu[i].className.replace(" active", "")
-            }
-            slides[slideIndex - 1].style.display = "block"
-            sildeMenu[slideIndex - 1].className += " active"
-            setTimeout(autoShowSlides, 2000)
         }
         </script>
 </body>
