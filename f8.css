@@ -8,6 +8,11 @@ html {
     scroll-behavior: smooth;
 }
 
+@keyframes fade {
+    from {opacity: .2} 
+    to {opacity: 1}
+}  
+
 .navbar {
     width: 100vw;
     height: 15vh;
@@ -99,6 +104,9 @@ html {
 .banner-img {
     flex-basis: 100%;
     position: relative;
+    display: none;
+    animation-name: fade;
+    animation-duration: 2s;
 }
 
 .discount {
@@ -137,6 +145,44 @@ html {
 .discount div span {
     display: block;
     text-transform: uppercase;
+}
+
+.next {
+    right: 0;
+}
+
+.next, .prev {
+    position: absolute;
+    top: 50%;
+    padding: 15px;
+    font-size: xx-large;
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+    transition: 0.5s;
+}
+
+.next:hover, .prev:hover {
+    color: rgba(0, 150, 0, 0.8);
+}
+
+.slideMenu {
+    text-align: center;
+}
+
+.dot {
+    width: 15px;
+    height: 15px;
+    margin: 0 2px;
+    background-color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-block;
+    transition: 0.5s;
+}
+
+.active, .dot:hover {
+    background-color: green;
 }
 
 .banner-grid {
